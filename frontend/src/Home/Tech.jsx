@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Creator() {
+function Tech() {
   return (
     <div>
-      Creater
+      Tech
     </div>
   )
 }
 
-export default Creator
+export default Tech
