@@ -25,7 +25,6 @@ category:{
 about:{
 type:String,
 required:true,
-minlength:[200,"Should contain atlest 200 charcter"]
 
 },
 adminName:{

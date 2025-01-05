@@ -1,4 +1,5 @@
 import express from "express"
+import cors from "cors"
 import dotenv from "dotenv"
 import mongoose from "mongoose"
 import userRoute from "./routes/user.route.js"
@@ -10,8 +11,12 @@ import cookieParser from "cookie-parser"
 
 const app = express()
 dotenv.config();
-const port = process.env.PORT;
+const port = process.env.PORT ||5000;
 const MONOGO_URL=process.env.MONOG_URI;
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
 
 //DB Code
 try{
@@ -24,6 +29,11 @@ console.log(error)
 //middleware
 app.use(express.json()); 
 app.use(cookieParser());
+app.use(cors({
+origin:process.env.FRONTEND_URL,
+methods:["GET","POST","PUT","DELETE"],
+
+}));
 
 //fileuplode middleware
 app.use(fileUpload({
