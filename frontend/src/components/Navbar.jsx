@@ -15,7 +15,7 @@ const Navbar = () => {
           <div className='font-semibold text-xl'>TechLearner<span className='text-blue-600'>X</span></div>
 
 {/* desktop */}
-          <div className=''>
+          <div className='mx-6'>
             <ul className='space-x-6 hidden md:flex'>
             <Link to="/" className='hover:text-blue-600'>HOME</Link>
             <Link to="/stocks" className='hover:text-blue-600'>COURSE</Link>
@@ -40,11 +40,31 @@ const Navbar = () => {
         {show && (
           <div className='bg-white h-screen flex items-center justify-center md:hidden'>
                 <ul className='flex flex-col space-y-6 text-xl text-center'>
-            <Link to="/" className='hover:text-blue-600'>HOME</Link>
-            <Link to="/stocks" className='hover:text-blue-600'>COURSE</Link>
-            <Link to="/creators" className='hover:text-blue-600'>CREATORS</Link>
-            <Link to="/about" className='hover:text-blue-600'>ABOUT</Link>
-            <Link to="/contact" className='hover:text-blue-600'>CONTACT</Link>
+            <Link to="/" smooth={true} 
+  duration={500} 
+  offset={-700} 
+  className="hover:text-blue-600"
+  onClick={() => setShow(!show)}>HOME</Link>
+            <Link to="/stocks" smooth={true} 
+  duration={500} 
+  offset={-700} 
+  className="hover:text-blue-600"
+  onClick={() => setShow(!show)}>COURSE</Link>
+            <Link to="/creators" smooth={true} 
+  duration={500} 
+  offset={-700} 
+  className="hover:text-blue-600"
+  onClick={() => setShow(!show)}>CREATORS</Link>
+            <Link to="/about" smooth={true} 
+  duration={500} 
+  offset={-700} 
+  className="hover:text-blue-600"
+  onClick={() => setShow(!show)}>ABOUT</Link>
+            <Link to="/contact" smooth={true} 
+  duration={500} 
+  offset={-700} 
+  className="hover:text-blue-600"
+  onClick={() => setShow(!show)}>CONTACT</Link>
             </ul>
           </div>
         )}
